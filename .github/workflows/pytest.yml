@@ -6,9 +6,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python for Demo
+    - name: Afficher nom de la branche et OS
+        run: |
+          echo "Nom branche: ${{ github.ref }}"
+          echo "OS runner: ${{ runner.os }}"
       uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
     - name: Install pytest
       run: pip install pytest
     - name: Run tests
