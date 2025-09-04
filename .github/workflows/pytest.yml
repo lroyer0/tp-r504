@@ -8,8 +8,8 @@ jobs:
     - name: Set up Python for Demo
     - name: Afficher nom de la branche et OS
       run: |
-        echo "Nom branche: ${{ github.ref }}"
-        echo "OS runner: ${{ runner.os }}"
+	      echo "Nom branche: ${{ github.ref }}"
+	      echo "OS runner: ${{ runner.os }}"
       uses: actions/setup-python@v4
     - name: Install pytest
       run: pip install pytest
