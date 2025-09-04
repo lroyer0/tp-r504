@@ -1,11 +1,23 @@
 def puissance(a, b):
     if not type(a) is int:
-        raise TypeError("Seuls les entiers sont autorisés")
+        raise TypeError("Only integers are allowed")
     if not type(b) is int:
-        raise TypeError("Seuls les entiers sont autorisés")
-
-    # Cas limite : 0^x avec x < 0 est indéfini
+        raise TypeError("Only integers are allowed")
+    
     if a == 0 and b < 0:
-        raise ValueError("0 ne peut pas être élevé à une puissance négative")
+        raise ValueError("0 cannot be raised to a negative power")
+    
+    if b == 0:
+        return 1
+    
+    if b > 0:
+        resultat = 1
+        for i in range(b):
+            resultat *= a
+        return resultat
+    else:  # b < 0
+        resultat = 1
+        for i in range(-b):
+            resultat *= a
+        return 1.0 / resultat
 
-    return a ** b
