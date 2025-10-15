@@ -12,7 +12,8 @@ public class ClientUDP
 		DatagramSocket socket = new DatagramSocket();
 		System.out.println("adresse=" +addr.getHostName () );
 		socket.send(packet);
+
+
 		socket.close();
 	}
-
 }

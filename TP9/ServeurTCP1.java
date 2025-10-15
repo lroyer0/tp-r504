@@ -1,0 +1,22 @@
+import java.net.*;
+import java.io.*;
+
+public class ServeurTCP1 {
+    public static void main(String[] args) {
+        try {
+            // Serveur en attente sur le port 2016
+            ServerSocket socketserver = new ServerSocket(2016);
+            System.out.println("serveur en attente");
+            Socket socket = socketserver.accept();
+            System.out.println("Connexion d'un client");
+            DataInputStream dIn = new DataInputStream(socket.getInputStream());
+            
+            System.out.println("Message : " + dIn.readUTF());
+            
+            socket.close();
+            socketserver.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
